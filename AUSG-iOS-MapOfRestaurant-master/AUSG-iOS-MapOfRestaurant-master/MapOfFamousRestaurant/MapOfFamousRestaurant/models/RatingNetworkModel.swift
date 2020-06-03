@@ -1,0 +1,6 @@
+import Alamofire
+
+struct RatingService {
+    
+    
+}
