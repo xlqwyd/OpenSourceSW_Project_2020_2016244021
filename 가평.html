@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>가평군</title>
+   <meta charset="UTF-8">
+<script type="text/javascript" src="jquery-3.5.1.min.js"></script>
+</head>
+<body>
+  <img width="500" height="300" src="file:///C:/Users/user/Desktop/project-master/ga1.jpg">
+  </body>
+<body>
+<aside id="main_section">
+<script type="text/javascript">
+medicine = 0; //약국
+var hospital1 = 0; //종합병원
+var hospital2 = 0; //일반병원
+var hospital3 = 0; //차과병원
+var hospital4 = 0; //한방병원
+var hospital5 = 0; //요양병원
+
+$.ajax({ // 약국 데이터
+    url: '약국.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction);
+$.ajax({ //종합병원 데이터
+    url: '종합병원.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction2);
+$.ajax({ //일반병원 데이터
+    url: '일반병원.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction3);
+$.ajax({ //치과병원 데이터
+    url: '치과병원.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction4);
+$.ajax({ //한방병원 데이터
+    url: '한방병원.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction5);
+$.ajax({ //요양병원 데이터
+    url: '요양병원.csv',
+    dataType: 'text',
+    async: false,
+  }).done(successFunction6);
+$.ajax({ //공원 데이터
+  async: false,
+  }).done(successFunction7);
+
+function successFunction(data) { //약국
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  //var count=0;
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++medicine;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  //document.write(count);
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\"> 가평군 약국 <span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\">"+ medicine + "<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px; auto;\"> 개<br>");
+  //medicine = count;
+}
+
+function successFunction2(data) { //종합병원
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++hospital1;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 종합병원 <span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\"> "+ hospital1 + " <span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">개<br>");
+}
+function successFunction3(data) { //일반병원
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++hospital2;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 일반병원<span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\"> "+ hospital2 + " <span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">개<br>");
+}
+
+function successFunction4(data) { //치과병원
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++hospital3;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 치과병원<span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\"> "+ hospital3 + "<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\"> 개<br>");
+}
+
+function successFunction5(data) { //한방병원
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++hospital4;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 한방병원<span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\"> "+ hospital4 + "<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\"> 개<br>");
+}
+
+function successFunction6(data) { //요양병원
+  var allRows = data.split(/\r?\n|\r/);
+  var table = '';
+  for (var singleRow = 0; singleRow < allRows.length; singleRow++) {
+    if (singleRow === 0) {
+    } else {
+    }
+    var rowCells = allRows[singleRow].split(',');
+    for (var rowCell = 0; rowCell < rowCells.length; rowCell++) {
+      if(rowCells[rowCell]=='가평군'){++hospital5;}
+      if (singleRow === 0) {
+        table += rowCells[rowCell];
+      } else {
+        table += rowCells[rowCell];
+      }
+    }
+    if (singleRow === 0) {
+    } else {
+    }
+  }
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 요양병원 <span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\">"+ hospital5 + " <span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">개<br>");
+}
+
+function successFunction7(data) { //공원
+  $('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">가평군 공원 면적 : <span style=\"background: white; font-size: 24px; color: blue; width: 100px; height:200px;\">104㎦<br>");
+}
+</script>
+</section>
+<aside id="main_aside">
+<script>
+var hos1 = 0.09; // 종합병원 0.45
+var hos2 = 14.20; // 일반병원 0.25
+var hos3 = 8.02; //치과병원 0.15
+var hos4 = 6.08; //한방병원 0.10
+var hos5 = 0.18; //요양병원 0.05
+var medic = 8.43; //약국 0.35
+var spark = 0.27; //서울공원면적 0.20
+var gpark = 104; //경기도 공원 면적
+var area = 843.6; //시,군 면적
+var result = eval(hospital1/area/hos1*100*0.45*0.45+hospital2/area/hos2*100*0.45*0.25
++hospital3/area/hos3*100*0.45*0.15+hospital4/area/hos4*100*0.45*0.1+hospital5/area/hos5*100*0.45*0.05
++gpark/area/spark*100*0.2+medicine/area/medic*100/0.35);
+
+$('body').append("<span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">점수 출력 : <span style=\"background: white; font-size: 24px; color: red; width: 100px; height:200px;\"> " + result.toFixed(2) +" <span style=\"background: white; font-size: 24px; color: black; width: 100px; height:200px;\">점 <br><br>");
+
+</script>
+</script>
+</section>
+</body>
+</html>
